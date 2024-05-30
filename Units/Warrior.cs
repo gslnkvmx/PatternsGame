@@ -16,6 +16,11 @@ namespace PatternsGame.Units
 
         public Warrior() : base() { }
 
+        public override string GetInfo()
+        {
+            return $"Воин, HP: {HP}, атака: {Attack}, защита: {Defence}, цена: {Cost}";
+        }
+
         public Warrior(int hp)
         {
             HP = hp;

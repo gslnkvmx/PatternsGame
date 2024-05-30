@@ -20,10 +20,7 @@ namespace PatternsGame.Units
             HP = this.MaxHP;
         }
 
-        public string GetInfo()
-        {
-            return "";
-        }
+        public abstract string GetInfo();
 
         public void AttackUnit(Unit opp_unit)
         {

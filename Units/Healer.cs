@@ -7,15 +7,16 @@ using System.Threading.Tasks;
 
 namespace PatternsGame.Units
 {
-    internal class Mage: Unit, ISpecialAbility
+    internal class Healer : Unit, ISpecialAbility
     {
         public override int HP { get; set; }
-        public override int MaxHP { get => 50; }
-        public override int Attack { get => 50; }
+        public override int MaxHP { get => 150; }
+        public override int Attack { get => 10; }
         public override int Defence { get => 5; }
         public override int Cost { get => 20; }
+        public int Healing { get => 40; }
         public int Range { get; set; }
-        public Mage() : base() { }
+        public Healer() : base() { }
 
         public Unit? ChooseTarget(FightTurn fightTurn)
         {
@@ -23,7 +24,7 @@ namespace PatternsGame.Units
             while (i <= Range)
             {
                 var unit = fightTurn.AttackingArmy.Units[i];
-                if (unit is IClonable) return unit;
+                return unit;
             }
 
             return null;
@@ -31,13 +32,12 @@ namespace PatternsGame.Units
 
         public void UseAbility(Unit unit)
         {
-            var clonableUnit = unit as IClonable;
-            if (clonableUnit != null) clonableUnit.Clone();
+            unit.HP += Healing;
         }
 
         public override string GetInfo()
         {
-            return $"Маг, HP: {HP}, атака: {Attack}, защита: {Defence}, цена: {Cost}";
+            return $"Целитель, HP: {HP}, атака: {Attack}, защита: {Defence}, цена: {Cost}";
         }
     }
 }

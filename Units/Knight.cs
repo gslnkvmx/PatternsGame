@@ -13,5 +13,10 @@ namespace PatternsGame.Units
         public override int Attack { get => 80; }
         public override int Defence { get => 20; }
         public override int Cost { get => 15; }
+
+        public override string GetInfo()
+        {
+            return $"Рыцарь, HP: {HP}, атака: {Attack}, защита: {Defence}, цена: {Cost}";
+        }
     }
 }

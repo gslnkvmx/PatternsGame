@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace PatternsGame.Units
 {
-    internal class Archer: Unit, ISpecialAbility
+    internal class Archer: Unit, ISpecialAbility, IClonable
     {
         public override int HP { get; set; }
         public override int MaxHP { get => 60; }
@@ -35,6 +35,11 @@ namespace PatternsGame.Units
         public void UseAbility(Unit unit)
         {
             this.AttackUnit(unit);
+        }
+
+        public override string GetInfo()
+        {
+            return $"Лучник, HP: {HP}, атака: {Attack}, защита: {Defence}, цена: {Cost}";
         }
     }
 }
