@@ -10,5 +10,9 @@ namespace PatternsGame.Game
     {
         public IArmy ArmyRed { get; set; }
         public IArmy ArmyBlue { get; set; }
-}
+
+        public string GetArmysState();
+
+        public void DeleteDeadUnits();
+    }
 }

@@ -29,7 +29,14 @@ namespace PatternsGame.Units
 
         public Unit? ChooseTarget(FightTurn fightTurn)
         {
-            return fightTurn.DefendingArmy.Units[1];
+            int i = 0;
+            while (i <= Range)
+            {
+                var unit = fightTurn.DefendingArmy.Units[i];
+                return unit;
+            }
+
+            return null;
         }
 
         public void UseAbility(Unit unit)

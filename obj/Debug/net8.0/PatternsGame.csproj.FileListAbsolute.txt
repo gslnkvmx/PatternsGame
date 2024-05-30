@@ -12,3 +12,4 @@ C:\Users\maxgu\source\repos\PatternsGame\PatternsGame\obj\Debug\net8.0\refint\Pa
 C:\Users\maxgu\source\repos\PatternsGame\PatternsGame\obj\Debug\net8.0\PatternsGame.pdb
 C:\Users\maxgu\source\repos\PatternsGame\PatternsGame\obj\Debug\net8.0\PatternsGame.genruntimeconfig.cache
 C:\Users\maxgu\source\repos\PatternsGame\PatternsGame\obj\Debug\net8.0\ref\PatternsGame.dll
+C:\Users\maxgu\source\repos\PatternsGame\PatternsGame\obj\Debug\net8.0\PatternsGame.sourcelink.json

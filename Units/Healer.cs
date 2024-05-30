@@ -14,7 +14,7 @@ namespace PatternsGame.Units
         public override int Attack { get => 10; }
         public override int Defence { get => 5; }
         public override int Cost { get => 20; }
-        public int Healing { get => 40; }
+        public int Healing { get => 20; }
         public int Range { get; set; }
         public Healer() : base() { }
 

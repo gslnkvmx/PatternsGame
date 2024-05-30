@@ -23,5 +23,11 @@ namespace PatternsGame.Game
             AttackingArmy = DefendingArmy;
             DefendingArmy = tempArmy;
         }
+
+        public void DeleteDeadUnits()
+        {
+            AttackingArmy.Units.RemoveAll(unit => !unit.IsAlive());
+            DefendingArmy.Units.RemoveAll(unit => !unit.IsAlive());
+        }
     }
 }
