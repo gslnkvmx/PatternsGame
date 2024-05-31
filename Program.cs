@@ -31,6 +31,8 @@ namespace PatternsGame
 
             var command = new FightCommand(battleState, fightTurn);
 
+            Console.WriteLine(fightTurn.GetArmysState());
+
             while (!battleState.SomeoneWins())
             {
                 Console.WriteLine(Menu);

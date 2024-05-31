@@ -1,18 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using PatternsGame.Game;
+
 
 namespace PatternsGame.Units
 {
-    internal class Warrior: Unit, IClonable
+    internal class Warrior : Unit, IClonable, ISpecialAbility
     {
         public override int HP { get; set; }
         public override int MaxHP { get => 100; }
         public override int Attack { get => 50; }
         public override int Defence { get => 10; }
         public override int Cost { get => 5; }
+        public int Range { get; set; }
 
         public Warrior() : base() { }
 
@@ -24,7 +22,20 @@ namespace PatternsGame.Units
         public Warrior(int hp)
         {
             HP = hp;
-        }  
+        }
+        public Unit? ChooseTarget(FightTurn fightTurn)
+        {
+            var unit = fightTurn.AttackingArmy.Units[0];
+            if (unit.GetType() == typeof(Knight))
+                return unit;
+            else return null;
+        }
+
+        public void UseAbility(Unit unit, FightTurn fightTurn)
+        {
+            var ironKnight = new IronKnight((Knight)unit);
+            fightTurn.AttackingArmy.Units[0] = ironKnight;
+        }
 
         public Unit Clone()
         {
