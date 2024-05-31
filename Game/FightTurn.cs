@@ -46,10 +46,10 @@ namespace PatternsGame.Game
 
         public override void CastAbilities()
         {
-            foreach (var unit in AttackingArmy.Units )
+            for (int i = 0; i < AttackingArmy.Units.Count(); i++)
             {
                 //тут наверное исправить на реализацию в классе
-                if (unit is ISpecialAbility) ((ISpecialAbility)unit).CastAbility(this);
+                if (AttackingArmy.Units[i] is ISpecialAbility) ((ISpecialAbility)AttackingArmy.Units[i]).CastAbility(this);
             }
         }
 
