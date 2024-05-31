@@ -14,17 +14,21 @@ namespace PatternsGame.Units
         public override int Attack { get => 10; }
         public override int Defence { get => 5; }
         public override int Cost { get => 20; }
-        public int Healing { get => 20; }
-        public int Range { get; set; }
+        public int Healing { get => 27; }
+        public int Range { get => 6; }
         public Healer() : base() { }
 
         public Unit? ChooseTarget(FightTurn fightTurn)
         {
-            int i = 0;
-            while (i <= Range)
+            var pos = fightTurn.AttackingArmy.Units.IndexOf(this);
+            int i = pos;
+            var distance = 0;
+            while (i >= 0 & distance<=Range)
             {
                 var unit = fightTurn.AttackingArmy.Units[i];
-                return unit;
+                if (unit.HP < unit.MaxHP) return unit;
+                i--;
+                distance++;
             }
 
             return null;

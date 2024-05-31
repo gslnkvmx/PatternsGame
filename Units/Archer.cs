@@ -14,7 +14,7 @@ namespace PatternsGame.Units
         public override int Attack { get => 50; }
         public override int Defence { get => 5; }
         public override int Cost { get => 8; }
-        public int Range { get; set; }
+        public int Range { get => 10; }
         public Archer() : base() { }
 
         public Archer(int hp)
@@ -29,11 +29,15 @@ namespace PatternsGame.Units
 
         public Unit? ChooseTarget(FightTurn fightTurn)
         {
+            var pos = fightTurn.AttackingArmy.Units.IndexOf(this);
             int i = 0;
-            while (i <= Range)
+            var distance = pos;
+            while (i < fightTurn.DefendingArmy.Units.Count() & distance <= Range)
             {
                 var unit = fightTurn.DefendingArmy.Units[i];
-                return unit;
+                if (unit.HP < unit.MaxHP) return unit;
+                i++;
+                distance++;
             }
 
             return null;

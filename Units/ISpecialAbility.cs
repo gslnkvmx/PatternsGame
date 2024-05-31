@@ -9,7 +9,7 @@ namespace PatternsGame.Units
 {
     internal interface ISpecialAbility
     {
-        public int Range { get; set; }
+        public int Range { get;}
         protected Unit? ChooseTarget(FightTurn fightTurn);
         public void UseAbility(Unit unit, FightTurn fightTurn);
         public void CastAbility(FightTurn fightTurn)
