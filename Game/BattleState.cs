@@ -17,6 +17,7 @@ namespace PatternsGame.Game
         {
             ArmyRed = army1;
             ArmyBlue = army2;
+            fightHistory.Add(this);
         }
 
         //убрать повторяющийся код в IArmy
