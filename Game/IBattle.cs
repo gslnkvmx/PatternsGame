@@ -10,6 +10,7 @@ namespace PatternsGame.Game
     {
         public IArmy ArmyRed { get; set; }
         public IArmy ArmyBlue { get; set; }
+        public List<BattleState> fightHistory { get; set; }
 
         public string GetArmysState();
 

@@ -33,8 +33,6 @@ namespace PatternsGame.Game
 
         public abstract void DeleteDeadUnits();
 
-        public abstract string GetState();
-
         public abstract void BeatEachOther();
 
         public abstract void CastAbilities();

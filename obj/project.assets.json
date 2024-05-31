@@ -1,11 +1,39 @@
 {
   "version": 3,
   "targets": {
-    "net8.0": {}
+    "net8.0": {
+      "Baksteen.Extensions.DeepCopy/1.0.3": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/Baksteen.Extensions.DeepCopy.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/Baksteen.Extensions.DeepCopy.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "Baksteen.Extensions.DeepCopy/1.0.3": {
+      "sha512": "YUQqLWk0miJQxcvSlaLZs8HetJfV0GorxBldhFHell3iIWRjZF7DBaf43AUjvTqxyx7Ff5nisbzVtSo9EAE0Sg==",
+      "type": "package",
+      "path": "baksteen.extensions.deepcopy/1.0.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "baksteen.extensions.deepcopy.1.0.3.nupkg.sha512",
+        "baksteen.extensions.deepcopy.nuspec",
+        "lib/net6.0/Baksteen.Extensions.DeepCopy.dll",
+        "lib/net7.0/Baksteen.Extensions.DeepCopy.dll",
+        "lib/net8.0/Baksteen.Extensions.DeepCopy.dll"
+      ]
+    }
+  },
   "projectFileDependencyGroups": {
-    "net8.0": []
+    "net8.0": [
+      "Baksteen.Extensions.DeepCopy >= 1.0.3"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\maxgu\\.nuget\\packages\\": {},
@@ -56,6 +84,12 @@
     "frameworks": {
       "net8.0": {
         "targetAlias": "net8.0",
+        "dependencies": {
+          "Baksteen.Extensions.DeepCopy": {
+            "target": "Package",
+            "version": "[1.0.3, )"
+          }
+        },
         "imports": [
           "net461",
           "net462",

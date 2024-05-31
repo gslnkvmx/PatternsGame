@@ -13,3 +13,6 @@ C:\Users\maxgu\source\repos\PatternsGame\PatternsGame\obj\Debug\net8.0\PatternsG
 C:\Users\maxgu\source\repos\PatternsGame\PatternsGame\obj\Debug\net8.0\PatternsGame.genruntimeconfig.cache
 C:\Users\maxgu\source\repos\PatternsGame\PatternsGame\obj\Debug\net8.0\ref\PatternsGame.dll
 C:\Users\maxgu\source\repos\PatternsGame\PatternsGame\obj\Debug\net8.0\PatternsGame.sourcelink.json
+C:\Users\maxgu\source\repos\PatternsGame\PatternsGame\bin\Debug\net8.0\Baksteen.Extensions.DeepCopy.dll
+C:\Users\maxgu\source\repos\PatternsGame\PatternsGame\obj\Debug\net8.0\PatternsGame.csproj.AssemblyReference.cache
+C:\Users\maxgu\source\repos\PatternsGame\PatternsGame\obj\Debug\net8.0\Patterns.678E43CC.Up2Date

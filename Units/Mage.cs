@@ -1,4 +1,5 @@
-﻿using PatternsGame.Game;
+﻿using Baksteen.Extensions.DeepCopy;
+using PatternsGame.Game;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,11 +31,12 @@ namespace PatternsGame.Units
         }
 
         //пофиксить, добавлять юнита в армию!
-        public void UseAbility(Unit unit, FightTurn fightTurn)
+        public FightTurn UseAbility(Unit unit, FightTurn fightTurn)
         {
+            var turnClone = fightTurn.DeepCopy();
             var clonableUnit = unit as IClonable;
-            //if (clonableUnit != null) fightTurn.AttackingArmy.Units.Add(clonableUnit.Clone()); - ошибка коллекция была изменена!!
-            if (clonableUnit != null) clonableUnit.Clone();
+            if (clonableUnit != null) turnClone!.AttackingArmy.Units.Add(clonableUnit.Clone());
+            return turnClone!;
         }
 
         public override string GetInfo()

@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "IuKHK0BLLEwBUgoUXtelgYvR0+NdkHHxFQywtFSXnI/cvz+UTWLLH9jdcgzaXBAhhIn3cYmhuuDij5PI2ZnoRQ==",
+  "dgSpecHash": "8A3uNTX1RDa4DCfOQnsdlbGUeAVL5V/x9wnlozjWwh6KZhEgR3TRwLHU79oOQTsNZ0wblvvNb7eN5ebkmNy5Yg==",
   "success": true,
   "projectFilePath": "C:\\Users\\maxgu\\source\\repos\\PatternsGame\\PatternsGame\\PatternsGame.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\maxgu\\.nuget\\packages\\baksteen.extensions.deepcopy\\1.0.3\\baksteen.extensions.deepcopy.1.0.3.nupkg.sha512"
+  ],
   "logs": []
 }

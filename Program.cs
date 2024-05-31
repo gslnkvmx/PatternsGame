@@ -6,6 +6,7 @@ namespace PatternsGame
 {
     internal class Program
     {
+        static string Menu = "1. Сделать ход        2. Отменить ход";
         static void Main(string[] args)
         {
             var army1 = new Army("Max", new List<Unit>());
@@ -28,9 +29,23 @@ namespace PatternsGame
             var battleState = new BattleState(army1, army2);
             var fightTurn = new FightTurn(battleState);
 
+            var command = new FightCommand(battleState, fightTurn);
+
             while (!battleState.SomeoneWins())
             {
-                fightTurn.MakeAMove();
+                Console.WriteLine(Menu);
+                var choose = Console.ReadLine();
+                switch (choose)
+                {
+                    case "1":
+                        command.Execute();
+                        break;
+                    case "2":
+                        fightTurn = command.Undo();
+                        break;
+                }
+
+                Console.WriteLine(fightTurn.GetArmysState());
             }
 
             Console.WriteLine("Побеждает армия " + battleState.GetWinner().Name); 

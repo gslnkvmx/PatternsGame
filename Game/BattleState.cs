@@ -11,6 +11,8 @@ namespace PatternsGame.Game
         public IArmy ArmyRed { get; set; }
         public IArmy ArmyBlue { get; set; }
 
+        public List<BattleState> fightHistory { get; set; } = [];
+
         public BattleState(IArmy army1, IArmy army2) 
         {
             ArmyRed = army1;
