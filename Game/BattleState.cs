@@ -49,5 +49,23 @@ namespace PatternsGame.Game
                 if (!unit.IsAlive()) ArmyBlue.Units.Remove(unit);
             }
         }
+
+        public bool SomeoneWins()
+        {
+            return ArmyBlue.Units.Count() == 0 || ArmyRed.Units.Count() == 0;
+        }
+
+        public IArmy GetWinner()
+        {
+            if (ArmyBlue.Units.Count() == 0)
+            {
+                return ArmyRed;
+            }
+
+            else 
+            {
+                return ArmyBlue;
+            }
+        }
     }
 }

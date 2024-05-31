@@ -30,7 +30,7 @@ namespace PatternsGame.Units
             return null;
         }
 
-        public void UseAbility(Unit unit)
+        public void UseAbility(Unit unit, FightTurn fightTurn)
         {
             unit.HP += Healing;
         }

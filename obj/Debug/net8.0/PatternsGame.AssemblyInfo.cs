@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PatternsGame")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+07c5062f4d12bdea5490b2af632b86f05526aafa")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+75db78500a01cdd0dac7211c0a44e0a9b1ccdac0")]
 [assembly: System.Reflection.AssemblyProductAttribute("PatternsGame")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PatternsGame")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

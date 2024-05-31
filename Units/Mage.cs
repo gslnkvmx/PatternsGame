@@ -33,7 +33,8 @@ namespace PatternsGame.Units
         public void UseAbility(Unit unit, FightTurn fightTurn)
         {
             var clonableUnit = unit as IClonable;
-            if (clonableUnit != null) fightTurn.AttackingArmy.Units.Add(clonableUnit.Clone());
+            //if (clonableUnit != null) fightTurn.AttackingArmy.Units.Add(clonableUnit.Clone()); - ошибка коллекция была изменена!!
+            if (clonableUnit != null) clonableUnit.Clone();
         }
 
         public override string GetInfo()

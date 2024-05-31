@@ -14,5 +14,8 @@ namespace PatternsGame.Game
         public string GetArmysState();
 
         public void DeleteDeadUnits();
+
+        public bool SomeoneWins();
+        public IArmy GetWinner();
     }
 }

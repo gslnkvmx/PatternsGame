@@ -28,50 +28,12 @@ namespace PatternsGame
             var battleState = new BattleState(army1, army2);
             var fightTurn = new FightTurn(battleState);
 
-            while (true)
+            while (!battleState.SomeoneWins())
             {
-                Console.WriteLine(battleState.GetArmysState());
-
-                fightTurn.AttackingArmy.Units[0].AttackUnit(fightTurn.DefendingArmy.Units[0]);
-                fightTurn.DefendingArmy.Units[0].AttackUnit(fightTurn.AttackingArmy.Units[0]);
-
-                fightTurn.DeleteDeadUnits();
-                Console.WriteLine(battleState.GetArmysState());
-
-                fightTurn.SwapTurn();
-
-                foreach(var unit in fightTurn.AttackingArmy.Units)
-                {
-                    //тут наверное исправить на реализацию в классе
-                    if (unit is ISpecialAbility) ((ISpecialAbility)unit).CastAbility(fightTurn);
-                }
-
-                fightTurn.DeleteDeadUnits();
-                Console.WriteLine(battleState.GetArmysState());
-
-                fightTurn.SwapTurn();
-
-                foreach (var unit in fightTurn.AttackingArmy.Units)
-                {
-                    //тут наверное исправить на реализацию в классе
-                    if (unit is ISpecialAbility) ((ISpecialAbility)unit).CastAbility(fightTurn);
-                }
-
-                fightTurn.DeleteDeadUnits();
-                Console.WriteLine(battleState.GetArmysState());
-
-                if(battleState.ArmyBlue.Units.Count() == 0)
-                {
-                    Console.WriteLine("Армия " + battleState.ArmyRed.Name + " победила!");
-                    return;
-                }
-
-                if (battleState.ArmyRed.Units.Count() == 0)
-                {
-                    Console.WriteLine("Армия " + battleState.ArmyBlue.Name + " победила!");
-                    return;
-                }
+                fightTurn.MakeAMove();
             }
+
+            Console.WriteLine("Побеждает армия " + battleState.GetWinner().Name); 
         }
     }
 }
