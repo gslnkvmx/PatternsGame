@@ -11,11 +11,11 @@ namespace PatternsGame.Units
     {
         public int Range { get; set; }
         protected Unit? ChooseTarget(FightTurn fightTurn);
-        public void UseAbility(Unit unit);
+        public void UseAbility(Unit unit, FightTurn fightTurn);
         public void CastAbility(FightTurn fightTurn)
         {
             var target = ChooseTarget(fightTurn);
-            if (target != null) UseAbility(target);
+            if (target != null) UseAbility(target, fightTurn);
         }
     }
 }

@@ -29,10 +29,11 @@ namespace PatternsGame.Units
             return null;
         }
 
-        public void UseAbility(Unit unit)
+        //пофиксить, добавлять юнита в армию!
+        public void UseAbility(Unit unit, FightTurn fightTurn)
         {
             var clonableUnit = unit as IClonable;
-            if (clonableUnit != null) clonableUnit.Clone();
+            if (clonableUnit != null) fightTurn.AttackingArmy.Units.Add(clonableUnit.Clone());
         }
 
         public override string GetInfo()
