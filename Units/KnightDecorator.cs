@@ -3,8 +3,8 @@ namespace PatternsGame.Units
 {
     abstract class KnightDecorator : Knight
     {
-        protected Knight knight;
-        public KnightDecorator(Knight knight) : base()
+        public Knight knight;
+        public void SetKnight(Knight knight)
         {
             this.knight = knight;
         }

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace PatternsGame.Game
 {
-    class FightTurn: FightTurnTemplate
+    class FightTurn : FightTurnTemplate
     {
         public IArmy AttackingArmy { get; set; }
         public IArmy DefendingArmy { get; set; }
@@ -31,6 +31,10 @@ namespace PatternsGame.Game
             AttackingArmy = DefendingArmy;
             DefendingArmy = tempArmy;
         }
+        public bool SomeoneWins()
+        {
+            return AttackingArmy.Units.Count() == 0 || DefendingArmy.Units.Count() == 0;
+        }
 
         public override void DeleteDeadUnits()
         {
@@ -40,8 +44,11 @@ namespace PatternsGame.Game
 
         public override void BeatEachOther()
         {
-            AttackingArmy.Units[0].AttackUnit(DefendingArmy.Units[0]);
-            DefendingArmy.Units[0].AttackUnit(AttackingArmy.Units[0]);
+            if (AttackingArmy.Units.Count() != 0 & DefendingArmy.Units.Count() != 0)
+            {
+                AttackingArmy.Units[0].AttackUnit(DefendingArmy.Units[0]);
+                DefendingArmy.Units[0].AttackUnit(AttackingArmy.Units[0]);
+            }
         }
 
         public override void CastAbilities()

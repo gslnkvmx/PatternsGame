@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace PatternsGame.Game
 {
-    internal class BattleState: IBattle
+    internal class BattleState : IBattle
     {
         public IArmy ArmyRed { get; set; }
         public IArmy ArmyBlue { get; set; }
 
         public List<BattleState> fightHistory { get; set; } = [];
 
-        public BattleState(IArmy army1, IArmy army2) 
+        public BattleState(IArmy army1, IArmy army2)
         {
             ArmyRed = army1;
             ArmyBlue = army2;
@@ -44,7 +44,7 @@ namespace PatternsGame.Game
         {
             foreach (var unit in ArmyRed.Units)
             {
-                if(!unit.IsAlive()) ArmyRed.Units.Remove(unit);
+                if (!unit.IsAlive()) ArmyRed.Units.Remove(unit);
             }
 
             foreach (var unit in ArmyRed.Units)
@@ -65,7 +65,7 @@ namespace PatternsGame.Game
                 return ArmyRed;
             }
 
-            else 
+            else
             {
                 return ArmyBlue;
             }

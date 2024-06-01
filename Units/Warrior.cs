@@ -25,10 +25,12 @@ namespace PatternsGame.Units
         }
         public Unit? ChooseTarget(FightTurn fightTurn)
         {
-            var unit = fightTurn.AttackingArmy.Units[0];
+            var pos = fightTurn.AttackingArmy.Units.IndexOf(this);
+            if (pos == 0) return null;
+            var unit = fightTurn.AttackingArmy.Units[pos - 1];
             if (unit.GetType() == typeof(Knight))
                 return unit;
-            else return null;
+            return null;
         }
 
         public void UseAbility(Unit unit, FightTurn fightTurn)

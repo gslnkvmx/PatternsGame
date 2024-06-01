@@ -13,7 +13,7 @@ namespace PatternsGame.Game
         public FightTurn Undo();
     }
 
-    internal class FightCommand: ICommand
+    internal class FightCommand : ICommand
     {
         BattleState _battle;
         FightTurn _turn;
@@ -32,7 +32,7 @@ namespace PatternsGame.Game
 
         public FightTurn Undo()
         {
-            if (_battle.fightHistory.Count() > 0)  _battle.fightHistory.RemoveAt(_battle.fightHistory.Count - 1);
+            if (_battle.fightHistory.Count() > 0) _battle.fightHistory.RemoveAt(_battle.fightHistory.Count - 1);
             if (_battle.fightHistory.Count() > 0) _turn = new FightTurn(_battle.fightHistory[_battle.fightHistory.Count - 1]);
             return _turn;
         }
